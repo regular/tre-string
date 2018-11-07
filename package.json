@@ -16,5 +16,12 @@
   "bugs": {
     "url": "https://github.com/regular/tre-string/issues"
   },
-  "homepage": "https://github.com/regular/tre-string#readme"
+  "homepage": "https://github.com/regular/tre-string#readme",
+  "dependencies": {
+    "mutant": "^3.22.1"
+  },
+  "devDependencies": {
+    "browserify": "^16.2.3",
+    "budo": "^11.5.0"
+  }
 }
