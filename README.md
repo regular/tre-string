@@ -1,0 +1,4 @@
+tre-string
+---
+
+License: ISC
