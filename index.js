@@ -1,6 +1,10 @@
 const h = require('mutant/html-element')
 const Value = require('mutant/value')
 
+function selectNone() {
+  const sel = window.getSelection()
+  sel.removeAllRanges()
+}
 function selectAll(el) {
   const range = document.createRange()
   range.selectNodeContents(el)
@@ -18,14 +22,17 @@ module.exports = function(opts) {
     let el
 
     function save() {
-      value=el.innerText
+      if (el.innerText == value) return cancel()
+      value = el.innerText
       editing.set(false)
+      selectNone()
       el.blur()
       if (opts.save) opts.save(el.innerText, el)
     }
     
     function cancel() {
       editing.set(false)
+      selectNone()
       el.innerText=value
       el.blur()
     }
